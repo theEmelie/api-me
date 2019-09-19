@@ -1,10 +1,10 @@
 var express = require('express');
 var router = express.Router();
 
-router.get('/hello', function(req, res, next) {
+router.get('/', function(req, res, next) {
     const data = {
         data: {
-            msg: "Hello World"
+            msg: req.params.msg
         }
     };
 
