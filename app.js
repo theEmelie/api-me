@@ -41,4 +41,4 @@ if (process.env.NODE_ENV !== 'test') {
 }
 
 // Start up server
-app.listen(port, () => console.log(`Example API listening on port ${port}!`));
+app.listen(port, () => console.log(`Backend api-me is listening to ${port}!`));
