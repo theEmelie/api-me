@@ -3,9 +3,14 @@ var router = express.Router();
 
 router.get('/', function(req, res, next) {
     const data = {
-        data: {
-            msg: req.params.msg
-        }
+        data: [
+            {
+                description: ""
+            },
+            {
+                description: ""
+            }
+        ]
     };
 
     res.json(data);

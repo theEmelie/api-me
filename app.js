@@ -6,7 +6,9 @@ const app = express();
 const port = 1337;
 
 const index = require('./routes/index');
-const reportsGet = require('./routes/reports-get');
+const reportsOne = require('./routes/reportsWeekOne');
+const reportsTwo = require('./routes/reportsWeekTwo');
+const reportsThree = require('./routes/reportsWeekThree');
 const reportsPost = require('./routes/reports');
 const auth = require('./routes/auth');
 
@@ -15,7 +17,9 @@ app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
 app.use('/', index);
-app.use('/reports/week/:msg', reportsGet);
+app.use('/reports/week/1', reportsOne);
+app.use('/reports/week/2', reportsTwo);
+app.use('/reports/week/3', reportsThree);
 app.use('/reports', reportsPost);
 app.use('/auth', auth);
 
