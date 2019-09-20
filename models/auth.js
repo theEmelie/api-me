@@ -8,6 +8,7 @@ const jwtSecret = "averylongpassword";
 
 const auth = {
     register: function(res, body) {
+        console.log(body);
         const email = body.email;
         const password = body.password;
         const name = body.name;
