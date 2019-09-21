@@ -24,10 +24,10 @@ const auth = {
                 }
             });
         }
-        console.log("hashing pass: " + password)
+        // console.log("hashing pass: " + password)
         bcrypt.hash(password, 10, function(err, hash) {
             if (err) {
-                console.log("hash error: " + hash)
+                // console.log("hash error: " + hash)
                 return res.status(500).json({
                     errors: {
                         status: 500,
@@ -38,7 +38,7 @@ const auth = {
                 });
             }
 
-            console.log("adding to db: " + name + " " + password + " " + email + " " + birthdate)
+            // console.log("adding to db: " + name + " " + password + " " + email + " " + birthdate)
             db.run("INSERT INTO users (name, birthdate, email, password) VALUES (?, ?, ?, ?)",
                 name,
                 birthdate,

@@ -7,9 +7,9 @@ CREATE TABLE IF NOT EXISTS users (
     UNIQUE(email)
 );
 
+DROP TABLE IF EXISTS reports;
 CREATE TABLE IF NOT EXISTS reports (
     weeknumber INT NOT NULL,
-    question VARCHAR(300),
-    answer VARCHAR(5000),
-    sortorder INT
+    title VARCHAR(300),
+    description VARCHAR(5000)
 );

@@ -4,15 +4,13 @@ const db = new sqlite3.Database('./db/texts.sqlite');
 const reports = {
     addReport: function(res, body) {
         const weeknumber = body.weeknumber;
-        const question = body.question;
-        const answer = body.answer;
-        const sortorder = body.sortorder;
+        const title = body.title;
+        const description = body.description;
 
-        db.run("INSERT INTO reports (weeknumber, question, answer, sortorder) VALUES (?, ?, ?, ?)",
+        db.run("INSERT INTO reports (weeknumber, title, description) VALUES (?, ?, ?)",
             weeknumber,
-            question,
-            answer,
-            sortorder, (err) => {
+            title,
+            description, (err) => {
                 if (err) {
                     return res.status(500).json({
                         errors: {
@@ -30,6 +28,36 @@ const reports = {
                     }
                 });
             });
-        }
+        },
+
+    getWeeklyReport: function(res, weeknumber) {
+        sql = "SELECT * FROM reports WHERE weeknumber=" + weeknumber.toString();
+        // console.log(sql);
+        db.each(sql, function (err, row) {
+            // console.log(row);
+            return res.status(200).json({
+                data: {
+                    weeknumber: row.weeknumber,
+                    title: row.title,
+                    description: row.description
+                }
+            });
+        })
+    },
+
+    getAllReports: function(res) {
+        sql = "SELECT * FROM reports";
+        var reportdata = [];
+
+        // console.log(sql);
+
+        db.each(sql, function (err, row) {
+            // console.log(row);
+            reportdata.push({weeknumber: row.weeknumber, title: row.title, description: row.description});
+        }, function() {
+            console.log(reportdata);
+            return res.json({data: reportdata});
+        })
+    }
 };
 module.exports = reports;
