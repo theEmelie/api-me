@@ -23,7 +23,7 @@ app.use('/', index);
 // app.use('/reports/week/2', reportsTwo);
 // app.use('/reports/week/3', reportsThree);
 app.use('/reports/', reportsGet);
-app.use('/reports', reportsPost);
+app.use('/reports/add-report', reportsPost);
 app.use('/auth', auth);
 
 // Add routes for 404 and error handling
