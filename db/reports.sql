@@ -45,4 +45,4 @@ VALUES (1,
             klurigt att koppla frontend och backend, det har kommit felmeddelanden som man inte riktigt har förstått sig på
             och liknande. Det var även svårt att göra en CRU på veckorapportena, men även det gick efter många timmar.</p>
             <p>I slutändan har det varit väldigt svårt att få allt att fungera tillsammans, men det har gått och jag har lärt
-            mig otroligt mycket och förhoppningsvis kommer det underlätta i kommande kursmoment och även projektet.</p>
+            mig otroligt mycket och förhoppningsvis kommer det underlätta i kommande kursmoment och även projektet.</p>"
