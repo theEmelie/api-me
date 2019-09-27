@@ -9,7 +9,6 @@
     "pretest": "bash db/reset_test_db.bash",
     "test": "nyc --reporter=html --reporter=text --reporter=clover mocha --timeout 10000",
     "clean": "rm -rf node_modules package-lock.json",
-    "posttest": "npm run eslint",
     "eslint": "eslint ."
   },
   "author": "",
