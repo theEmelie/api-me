@@ -6,9 +6,6 @@ const app = express();
 const port = 1337;
 
 const index = require('./routes/index');
-// const reportsOne = require('./routes/reportsWeekOne');
-// const reportsTwo = require('./routes/reportsWeekTwo');
-// const reportsThree = require('./routes/reportsWeekThree');
 const reportsPost = require('./routes/reports');
 const auth = require('./routes/auth');
 const reportsGet = require('./routes/reportsGet');
@@ -19,9 +16,6 @@ app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
 app.use('/', index);
-// app.use('/reports/week/1', reportsOne);
-// app.use('/reports/week/2', reportsTwo);
-// app.use('/reports/week/3', reportsThree);
 app.use('/reports/', reportsGet);
 app.use('/reports/add-report', reportsPost);
 app.use('/auth', auth);
@@ -42,4 +36,6 @@ if (process.env.NODE_ENV !== 'test') {
 }
 
 // Start up server
-app.listen(port, () => console.log(`Backend api-me is listening to ${port}!`));
+const server = app.listen(port, () => console.log(`Backend api-me is listening to ${port}!`));
+
+module.exports = server;

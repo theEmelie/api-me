@@ -1,5 +1,4 @@
-const sqlite3 = require('sqlite3').verbose();
-const db = new sqlite3.Database('./db/texts.sqlite');
+const db = require("../db/database.js");
 
 const reports = {
     addReport: function(res, body) {
@@ -9,8 +8,8 @@ const reports = {
         db.get("SELECT * FROM reports WHERE weeknumber=?",
         weeknumber,
         (err, rows) => {
-            console.log("row:");
-            console.log(rows);
+            // console.log("row:");
+            // console.log(rows);
             if (err) {
                 return res.status(500).json({
                     errors: {
@@ -61,13 +60,13 @@ const reports = {
         sql = "SELECT * FROM reports WHERE weeknumber=" + weeknumber.toString();
         var reportdata = [];
 
-        console.log("check");
+        // console.log("check");
 
         db.each(sql, function (err, row) {
             // console.log(row);
             reportdata.push({weeknumber: row.weeknumber, title: row.title, description: row.description});
         }, function() {
-            console.log(reportdata);
+            // console.log(reportdata);
             return res.json({data: reportdata});
         })
     },
@@ -80,14 +79,14 @@ const reports = {
             // console.log(row);
             reportdata.push({weeknumber: row.weeknumber});
         }, function() {
-            console.log(reportdata);
+            // console.log(reportdata);
             return res.json({data: reportdata});
         })
     },
 
     updateReport: function(res, body) {
-        console.log("body: ");
-        console.log(body);
+        // console.log("body: ");
+        // console.log(body);
         const weeknumber = body.weeknumber;
         const title = body.title;
         const description = body.description;
@@ -96,7 +95,7 @@ const reports = {
             description,
             weeknumber, (err) => {
                 if (err) {
-                    console.log(err);
+                    // console.log(err);
                     return res.status(500).json({
                         errors: {
                             status: 500,

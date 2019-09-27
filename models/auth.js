@@ -1,5 +1,4 @@
-const sqlite3 = require('sqlite3').verbose();
-const db = new sqlite3.Database('./db/texts.sqlite');
+const db = require("../db/database.js");
 
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
@@ -8,7 +7,6 @@ const jwtSecret = "averylongpassword";
 
 const auth = {
     register: function(res, body) {
-        console.log(body);
         const email = body.email;
         const password = body.password;
         const name = body.name;
@@ -46,6 +44,7 @@ const auth = {
                 hash, (err) => {
                     if (err) {
                         console.log("db error: " + err.message);
+                        // console.log(err);
                         return res.status(500).json({
                             errors: {
                                 status: 500,

@@ -9,11 +9,11 @@ const token = jwt.sign(payload, jwtSecret, { expiresIn: '1h'});
 const reports = require("../models/reports.js");
 
 function checkTokens(req, res, next) {
-    console.log("checking token");
+    // console.log("checking token");
     const token = req.headers['x-access-token'];
 
     jwt.verify(token, jwtSecret, function(err, decoded) {
-        console.log(err);
+        // console.log(err);
         if (err) {
             return res.status(401).json({
                 errors: {

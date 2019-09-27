@@ -13,13 +13,13 @@ router.post("/",
     (req, res) => reports.addReport(res, req.body));
 
 function checkToken(req, res, next) {
-    console.log("checking token");
+    // console.log("checking token");
     const token = req.headers['x-access-token'];
 
     jwt.verify(token, jwtSecret, function(err, decoded) {
-        console.log(err);
+        // console.log(err);
         if (err) {
-            return res.status(500).json({
+            return res.status(401).json({
                 errors: {
                     status: 401,
                     source: "/reports",
