@@ -4,9 +4,9 @@ var express = require('express');
 var router = express.Router();
 
 const jwt = require('jsonwebtoken');
-const payload = { email: "user@example.com" };
+// const payload = { email: "user@example.com" };
 const jwtSecret = "averylongpassword";
-const token = jwt.sign(payload, jwtSecret, { expiresIn: '1h'});
+// const token = jwt.sign(payload, jwtSecret, { expiresIn: '1h'});
 
 router.post("/",
     (req, res, next) => checkToken(req, res, next),
@@ -16,7 +16,7 @@ function checkToken(req, res, next) {
     // console.log("checking token");
     const token = req.headers['x-access-token'];
 
-    jwt.verify(token, jwtSecret, function(err, decoded) {
+    jwt.verify(token, jwtSecret, function(err) {
         // console.log(err);
         if (err) {
             return res.status(401).json({

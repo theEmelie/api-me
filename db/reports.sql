@@ -46,3 +46,12 @@ VALUES (1,
             och liknande. Det var även svårt att göra en CRU på veckorapportena, men även det gick efter många timmar.</p>
             <p>I slutändan har det varit väldigt svårt att få allt att fungera tillsammans, men det har gått och jag har lärt
             mig otroligt mycket och förhoppningsvis kommer det underlätta i kommande kursmoment och även projektet.</p>");
+
+        INSERT INTO reports (weeknumber, title, description)
+        VALUES (4,
+            "Use-case tester med Selenium",
+            "<h3><a href='https://github.com/theEmelie/me-react' className='github'>GitHub Repo</a></h3>
+            <div className='line'></div>
+            <p>Use-case 1: Användaren ska från förstasidan kunna trycka på en länk för komma tillbaka till förstasidan.</p>
+            <p>Use-case 2: Användaren ska från redovisningssidan kunna ta sig till registreringsformuläret.</p>
+            <p>Use-case 3: Användaren ska från registreringsformuläret kunna ta sig till login sidan.</p>");

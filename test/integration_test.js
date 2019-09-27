@@ -1,3 +1,5 @@
+/* eslint-env node, mocha */
+
 process.env.NODE_ENV = 'test';
 
 const db = require("../db/database.js");
@@ -197,7 +199,6 @@ describe('Testing auth and report functions', () => {
 
     describe('GET/POST /reports', () => {
         it('should get 404 page not found as invalid url', (done) => {
-
             chai.request(server)
                 .get("/week/2")
                 .end((err, res) => {
@@ -208,15 +209,14 @@ describe('Testing auth and report functions', () => {
         });
 
         it('should get valid week', (done) => {
-
             chai.request(server)
                 .get("/reports/week/1")
                 .end((err, res) => {
                     res.should.have.status(200);
                     res.body.should.be.an("object");
-                    res.body.data[0].title.should.equal("Header test")
-                    res.body.data[0].weeknumber.should.equal(1)
-                    res.body.data[0].description.should.equal("Text test")
+                    res.body.data[0].title.should.equal("Header test");
+                    res.body.data[0].weeknumber.should.equal(1);
+                    res.body.data[0].description.should.equal("Text test");
                     done();
                 });
         });
@@ -239,9 +239,9 @@ describe('Testing auth and report functions', () => {
                         .end((err, res) => {
                             res.should.have.status(200);
                             res.body.should.be.an("object");
-                            res.body.data[0].title.should.equal("Header test")
-                            res.body.data[0].weeknumber.should.equal(1)
-                            res.body.data[0].description.should.equal("Text test")
+                            res.body.data[0].title.should.equal("Header test");
+                            res.body.data[0].weeknumber.should.equal(1);
+                            res.body.data[0].description.should.equal("Text test");
                         });
                     done();
                 });
@@ -284,16 +284,16 @@ describe('Testing auth and report functions', () => {
                         .end((err, res) => {
                             res.should.have.status(200);
                             res.body.should.be.an("object");
-                            res.body.data.message.should.equal("Report successfully updated.")
+                            res.body.data.message.should.equal("Report successfully updated.");
 
                             chai.request(server)
                                 .get("/reports/week/1")
                                 .end((err, res) => {
                                     res.should.have.status(200);
                                     res.body.should.be.an("object");
-                                    res.body.data[0].title.should.equal("Header test2")
-                                    res.body.data[0].weeknumber.should.equal(1)
-                                    res.body.data[0].description.should.equal("Text test2")
+                                    res.body.data[0].title.should.equal("Header test2");
+                                    res.body.data[0].weeknumber.should.equal(1);
+                                    res.body.data[0].description.should.equal("Text test2");
                                 });
                         });
                     done();
@@ -314,13 +314,12 @@ describe('Testing auth and report functions', () => {
         });
 
         it('should get all weeknumbers', (done) => {
-
             chai.request(server)
                 .get("/reports/get-weeknumbers")
                 .end((err, res) => {
                     res.should.have.status(200);
                     res.body.should.be.an("object");
-                    res.body.data[0].weeknumber.should.equal(1)
+                    res.body.data[0].weeknumber.should.equal(1);
                     done();
                 });
         });
@@ -350,16 +349,16 @@ describe('Testing auth and report functions', () => {
                         .end((err, res) => {
                             res.should.have.status(201);
                             res.body.should.be.an("object");
-                            res.body.data.message.should.equal("Report successfully added.")
+                            res.body.data.message.should.equal("Report successfully added.");
 
                             chai.request(server)
                                 .get("/reports/week/2")
                                 .end((err, res) => {
                                     res.should.have.status(200);
                                     res.body.should.be.an("object");
-                                    res.body.data[0].title.should.equal("Header test3")
-                                    res.body.data[0].weeknumber.should.equal(2)
-                                    res.body.data[0].description.should.equal("Text test3")
+                                    res.body.data[0].title.should.equal("Header test3");
+                                    res.body.data[0].weeknumber.should.equal(2);
+                                    res.body.data[0].description.should.equal("Text test3");
                                 });
                         });
                     done();
@@ -392,7 +391,7 @@ describe('Testing auth and report functions', () => {
             chai.request(server)
                 .get("/")
                 .end((err, res) => {
-                    res.body.data[0].msg.length.should.be.equal(990);
+                    res.body.data[0].msg.length.should.be.equal(993);
                     res.should.have.status(200);
                     res.body.should.be.an("object");
                     done();
