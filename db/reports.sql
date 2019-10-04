@@ -59,7 +59,9 @@ VALUES (1,
         INSERT INTO reports (weeknumber, title, description)
         VALUES (5,
             "Realtid",
-            "<p>Den här veckan har vi skapat en realtid chatt till våran hemsida. Det har både varit svårt och enkelt. Efter
+            "<h3><a href='https://github.com/theEmelie/me-react' className='github'>GitHub Repo</a></h3>
+            <div className='line'></div>
+            <p>Den här veckan har vi skapat en realtid chatt till våran hemsida. Det har både varit svårt och enkelt. Efter
             att ha kollat på guiden och en del exempel på internet har jag fått en grundläggande förståelse för att bygga
             min egna chatt. Och jag har lärt mig att det är verkligen inte så svårt som man tror, på mindre än 100 rader i
             frontend och runt 50 rader i backend har jag lyckats skapa en fullt fungerade chatt. Det finns såklart mycket
