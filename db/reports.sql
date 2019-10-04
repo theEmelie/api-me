@@ -55,3 +55,15 @@ VALUES (1,
             <p>Use-case 1: Användaren ska från förstasidan kunna trycka på en länk för komma tillbaka till förstasidan.</p>
             <p>Use-case 2: Användaren ska från redovisningssidan kunna ta sig till registreringsformuläret.</p>
             <p>Use-case 3: Användaren ska från registreringsformuläret kunna ta sig till login sidan.</p>");
+
+        INSERT INTO reports (weeknumber, title, description)
+        VALUES (5,
+            "Realtid",
+            "<p>Den här veckan har vi skapat en realtid chatt till våran hemsida. Det har både varit svårt och enkelt. Efter
+            att ha kollat på guiden och en del exempel på internet har jag fått en grundläggande förståelse för att bygga
+            min egna chatt. Och jag har lärt mig att det är verkligen inte så svårt som man tror, på mindre än 100 rader i
+            frontend och runt 50 rader i backend har jag lyckats skapa en fullt fungerade chatt. Det finns såklart mycket
+            mer man skulle kunna lägga till för att få det ännu bättre. Ifrån början hade jag tänkt att lägga backend biten
+            i mitt me-api men när jag skulle driftsätta den så slutade allt fungera. Och i slutändan bestämmde jag mig för att
+            skapa ett seperat api för chatten och det fungerade som det skulle. Det har varit ett roligt kursmoment och väldigt
+            användbart inför framtiden att förstå sockets.</p>");
