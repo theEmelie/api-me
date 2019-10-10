@@ -69,3 +69,15 @@ VALUES (1,
             i mitt me-api men när jag skulle driftsätta den så slutade allt fungera. Och i slutändan bestämmde jag mig för att
             skapa ett seperat api för chatten och det fungerade som det skulle. Det har varit ett roligt kursmoment och väldigt
             användbart inför framtiden att förstå sockets.</p>");
+
+        INSERT INTO reports (weeknumber, title, description)
+        VALUES (6,
+            "NoSQL",
+            "<h3><a href='https://github.com/theEmelie/me-react' className='github'>GitHub Repo</a></h3>
+            <div className='line'></div>
+            <p>Den här veckan har vi lagt till mongoDB till våran hemsida och med hjälp utav det har vi
+            gjort en chatt historik. Jag har lagt till en knapp på min chatt sida, trycker man på den så får man upp
+            alla gammla meddelanden. Det har varit ett väldigt litet och snabbt kursmoment, tog inte många timmar att
+            slutföra, det finns många bra exempel på internet som har hjälpt mig att förstå vad jag ska göra, och vad
+            det faktiskt gör. Det har ändå varit roligt, jag trodde att det skulle vara svårt, det låter som om det
+            borde vara det, men det är verkligen tvärtemot!</p>");
